@@ -1,14 +1,26 @@
 const dropDown = () => {
-  const infoTab = document.querySelector('#info');
+  const nodesArray = Array.prototype.slice.call(document.querySelectorAll('.nav-item'));
 
-  infoTab.addEventListener('click', () => {
-    const infoDropdown = document.querySelector('.dropdown');
+  nodesArray.forEach((element) => {
+    element.addEventListener('mouseenter', (event) => {
+      const dropDownInfo = event.target.querySelector('.dropdown');
 
-    if (infoDropdown.style.display === 'none') {
-      infoDropdown.style.display = 'block';
-    } else {
-      infoDropdown.style.display = 'none';
-    }
+      if (dropDownInfo.style.display === 'none') {
+        dropDownInfo.style.display = 'block';
+      } else {
+        dropDownInfo.style.display = 'none';
+      }
+    });
+
+    element.addEventListener('mouseleave', (event) => {
+      const dropDownInfo = event.target.querySelector('.dropdown');
+
+      if (dropDownInfo.style.display === 'block') {
+        dropDownInfo.style.display = 'none';
+      } else {
+        dropDownInfo.style.display = 'block';
+      }
+    });
   });
 };
 
