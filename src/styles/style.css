@@ -1,9 +1,32 @@
+/* Page layout start */
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-container > * {
+  max-width: 50%;
+}
+
+/* Page layout end */
+
+/* ================== */
+
 /* mobile menu start */
+
+.menu {
+  display: flex;
+}
 
 .image {
   width: 30px;
 }
 /* mobile menu end */
+
+/* ================== */
 
 /* Drop down nav start */
 .top-nav {

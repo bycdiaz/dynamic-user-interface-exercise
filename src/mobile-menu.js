@@ -7,9 +7,9 @@ const mobileMenu = () => {
   const images = [home, info, email];
 
   const addImages = () => {
-    for (let index = 0; index < imageElements.length; index += 1) {
-      imageElements[index].src = images[index];
-    }
+    imageElements.forEach((element, index) => {
+      element.src = images[index];
+    });
   };
 
   return {
