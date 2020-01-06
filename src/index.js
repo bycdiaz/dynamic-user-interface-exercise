@@ -4,6 +4,11 @@ import { dropDown } from './drop-down';
 import { mobileMenu } from './mobile-menu';
 import { imageSlider } from './image-slider';
 
-dropDown();
-mobileMenu();
-imageSlider();
+const renderPage = () => {
+  dropDown();
+  const myMobileMenu = mobileMenu();
+  myMobileMenu.addImages();
+  imageSlider();
+};
+
+renderPage();

@@ -1,3 +1,11 @@
+/* mobile menu start */
+
+.image {
+  width: 30px;
+}
+/* mobile menu end */
+
+/* Drop down nav start */
 .top-nav {
   padding: 14px 0px;
   background-color: rgb(173, 173, 173);
@@ -17,3 +25,5 @@
 .dropdown {
   position: absolute;
 }
+
+/* Drop down nav end */

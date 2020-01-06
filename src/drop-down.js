@@ -1,7 +1,7 @@
 const dropDown = () => {
-  const nodesArray = Array.prototype.slice.call(document.querySelectorAll('.nav-item'));
+  const navElements = document.querySelectorAll('.nav-item');
 
-  nodesArray.forEach((element) => {
+  navElements.forEach((element) => {
     element.addEventListener('mouseenter', (event) => {
       const dropDownInfo = event.target.querySelector('.dropdown');
 
