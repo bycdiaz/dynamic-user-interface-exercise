@@ -16,7 +16,12 @@ const mobileMenu = () => {
 
     const addEvent = () => {
       hamburgerImage.addEventListener('click', () => {
-        console.log('burger clicked!');
+        const menu = document.querySelector('.menu');
+        if (menu.style.display === 'block') {
+          menu.style.display = 'none';
+        } else {
+          menu.style.display = 'block';
+        }
       });
     };
 
