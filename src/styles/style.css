@@ -39,6 +39,16 @@
   height: 32px;
 }
 
+.menu-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.menu-item > * {
+  margin: 5px 5px;
+}
+
 /* mobile menu end */
 
 /* ================== */
