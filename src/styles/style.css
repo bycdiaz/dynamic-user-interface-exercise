@@ -24,6 +24,21 @@
 .image {
   width: 30px;
 }
+
+.mobile-menu {
+  height: 667px;
+  width: 375px;
+}
+
+.mobile-nav {
+  background-color: #68829E;
+}
+
+.hamburger {
+  width: 32px;
+  height: 32px;
+}
+
 /* mobile menu end */
 
 /* ================== */

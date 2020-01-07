@@ -6,8 +6,7 @@ import { imageSlider } from './image-slider';
 
 const renderPage = () => {
   dropDown();
-  const myMobileMenu = mobileMenu();
-  myMobileMenu.addImages();
+  mobileMenu();
   imageSlider();
 };
 
