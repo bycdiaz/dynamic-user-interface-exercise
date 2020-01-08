@@ -15,6 +15,31 @@
 
 /* ================== */
 
+/* Drop down nav start */
+.top-nav {
+  padding: 14px 0px;
+  background-color: rgb(173, 173, 173);
+}
+
+.nav-item {
+  display: inline;
+  width: 60px;
+  padding: 12px 16px;
+}
+
+.nav-item:hover {
+  background-color: rgb(85, 85, 85);
+  color: white;
+}
+
+.dropdown {
+  position: absolute;
+}
+
+/* Drop down nav end */
+
+/* ================== */
+
 /* mobile menu start */
 
 .menu {
@@ -53,25 +78,14 @@
 
 /* ================== */
 
-/* Drop down nav start */
-.top-nav {
-  padding: 14px 0px;
-  background-color: rgb(173, 173, 173);
+/* image slider start */
+
+.slider-image {
+  height: 300px;
 }
 
-.nav-item {
-  display: inline;
-  width: 60px;
-  padding: 12px 16px;
+.arrow {
+  height: 125px;
 }
 
-.nav-item:hover {
-  background-color: rgb(85, 85, 85);
-  color: white;
-}
-
-.dropdown {
-  position: absolute;
-}
-
-/* Drop down nav end */
+/* image slider end */
