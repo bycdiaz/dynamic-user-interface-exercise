@@ -36,6 +36,22 @@ const imageSlider = () => {
       leftArrow.addEventListener('click', () => {
         sliderValue -= 1;
         console.log(sliderValue);
+
+        // TODO Correct cycling behavior
+        const focusedImage = sliderImageContainers[sliderValue % sliderImageContainers.length];
+        const priorImage = sliderImageContainers[((sliderValue % sliderImageContainers.length) + 1) % sliderImageContainers.length];
+
+        if (focusedImage.style.display === 'block') {
+          focusedImage.style.display = 'none';
+        } else {
+          focusedImage.style.display = 'block';
+        }
+
+        if (priorImage.style.display === 'block') {
+          priorImage.style.display = 'none';
+        } else {
+          priorImage.style.display = 'block';
+        }
       });
     };
 
@@ -45,6 +61,22 @@ const imageSlider = () => {
       rightArrow.addEventListener('click', () => {
         sliderValue += 1;
         console.log(sliderValue);
+
+        // TODO Correct cycling behavior
+        const focusedImage = sliderImageContainers[sliderValue % sliderImageContainers.length];
+        const priorImage = sliderImageContainers[((sliderValue % sliderImageContainers.length) + 1) % sliderImageContainers.length];
+
+        if (focusedImage.style.display === 'block') {
+          focusedImage.style.display = 'none';
+        } else {
+          focusedImage.style.display = 'block';
+        }
+
+        if (priorImage.style.display === 'block') {
+          priorImage.style.display = 'none';
+        } else {
+          priorImage.style.display = 'block';
+        }
       });
     };
 
