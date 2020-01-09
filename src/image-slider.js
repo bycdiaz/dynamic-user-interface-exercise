@@ -36,6 +36,10 @@ const imageSlider = () => {
       leftArrow.addEventListener('click', () => {
         sliderValue -= 1;
         console.log(sliderValue % sliderImageContainers.length);
+        sliderImageContainers.forEach((element) => {
+          element.style.display = 'none';
+        });
+        sliderImageContainers[sliderValue].style.display = 'block';
       });
     };
 
@@ -45,6 +49,10 @@ const imageSlider = () => {
       rightArrow.addEventListener('click', () => {
         sliderValue += 1;
         console.log(sliderValue % sliderImageContainers.length);
+        sliderImageContainers.forEach((element) => {
+          element.style.display = 'none';
+        });
+        sliderImageContainers[sliderValue].style.display = 'block';
       });
     };
 
@@ -59,6 +67,7 @@ const imageSlider = () => {
 
   addSliderImages();
   addArrows();
+  slide();
 
   return {
     addSliderImages,
