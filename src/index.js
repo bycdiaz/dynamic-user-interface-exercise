@@ -5,9 +5,10 @@ import { mobileMenu } from './mobile-menu';
 import { imageSlider } from './image-slider';
 
 const renderPage = () => {
-  dropDown();
-  mobileMenu();
-  imageSlider();
+  // dropDown();
+  // mobileMenu();
+  const myImageSlider = imageSlider();
+  myImageSlider.slide();
 };
 
 renderPage();

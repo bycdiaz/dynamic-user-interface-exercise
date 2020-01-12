@@ -35,11 +35,19 @@ const imageSlider = () => {
 
       leftArrow.addEventListener('click', () => {
         sliderValue -= 1;
-        console.log(sliderValue % sliderImageContainers.length);
+        console.log(sliderValue);
+        console.log(sliderValue + sliderImageContainers.length);
+
         sliderImageContainers.forEach((element) => {
           element.style.display = 'none';
         });
-        sliderImageContainers[sliderValue].style.display = 'block';
+
+        if (sliderValue >= -5) {
+          sliderImageContainers[sliderValue + sliderImageContainers.length].style.display = 'block';
+        } else {
+          sliderValue = -1;
+          sliderImageContainers[sliderValue + sliderImageContainers.length].style.display = 'block';
+        }
       });
     };
 
@@ -48,11 +56,12 @@ const imageSlider = () => {
 
       rightArrow.addEventListener('click', () => {
         sliderValue += 1;
+        console.log(sliderValue);
         console.log(sliderValue % sliderImageContainers.length);
         sliderImageContainers.forEach((element) => {
           element.style.display = 'none';
         });
-        sliderImageContainers[sliderValue].style.display = 'block';
+        sliderImageContainers[sliderValue % sliderImageContainers.length].style.display = 'block';
       });
     };
 
@@ -67,7 +76,6 @@ const imageSlider = () => {
 
   addSliderImages();
   addArrows();
-  slide();
 
   return {
     addSliderImages,
