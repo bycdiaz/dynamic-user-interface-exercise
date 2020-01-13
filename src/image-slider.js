@@ -1,9 +1,4 @@
 /* eslint-disable no-param-reassign */
-import burger1 from './images/burger1.jpg';
-import burger2 from './images/burger2.jpg';
-import burger3 from './images/burger3.jpg';
-import burger4 from './images/burger4.jpg';
-import burger5 from './images/burger5.jpg';
 import back from './images/back.png';
 import next from './images/next.png';
 
@@ -11,9 +6,7 @@ import next from './images/next.png';
 
 // const imageSlider = (imageArry, renderArea) => { }  --------> Final product
 
-const imageSlider = (renderArea) => {
-  const burgers = [burger1, burger2, burger3, burger4, burger5];
-
+const imageSlider = (imageArray, renderArea) => {
   // Create arrows to later append
   const arrowLeft = document.createElement('img');
   arrowLeft.src = back;
@@ -42,7 +35,7 @@ const imageSlider = (renderArea) => {
     const imageElements = renderArea.querySelectorAll('.slider-image');
 
     imageElements.forEach((element, index) => {
-      element.src = burgers[index];
+      element.src = imageArray[index];
     });
   };
 
