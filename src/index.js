@@ -12,8 +12,7 @@ import burger5 from './images/burger5.jpg';
 const renderPage = () => {
   // dropDown();
   // mobileMenu();
-  const myImageSlider = imageSlider([burger1, burger2, burger3, burger4, burger5], document.querySelector('.image-slider'));
-  myImageSlider.slide();
+  imageSlider([burger1, burger2, burger3, burger4, burger5], document.querySelector('.image-slider'));
 };
 
 renderPage();

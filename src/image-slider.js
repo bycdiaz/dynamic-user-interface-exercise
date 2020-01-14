@@ -2,12 +2,9 @@
 import back from './images/back.png';
 import next from './images/next.png';
 
-// imageSlider([burger1, burger2, burger3], document.querySelector('#imgSlider'))
-
-// const imageSlider = (imageArry, renderArea) => { }  --------> Final product
-
 const imageSlider = (imageArray, renderArea) => {
-  // Create arrows to later append
+  const imageDivs = [];
+
   const arrowLeft = document.createElement('img');
   arrowLeft.src = back;
   arrowLeft.classList.add('arrow');
@@ -18,48 +15,59 @@ const imageSlider = (imageArray, renderArea) => {
 
   const createSliderArea = () => {
     renderArea.appendChild(arrowLeft);
-    // append all image elements to renderArea to match what you [Carlos] have in HTML
+    imageDivs.forEach((image) => {
+      renderArea.appendChild(image);
+    });
     renderArea.appendChild(arrowRight);
   };
 
   const addSliderImages = () => {
-    // for each image in array passed in
-    //    create div
-    //    append "slider-image-container" class to div
-    //    create img
-    //    append img to div
-    //    append 'slider-image' class to img
-    //    set img.src to image in array
-    //    append div to renderArea
+    imageArray.forEach((image, index) => {
+      if (index === 0) {
+        const imageDiv = document.createElement('div');
+        imageDiv.className = 'slider-image-container';
+        imageDiv.style.display = 'block';
 
-    const imageElements = renderArea.querySelectorAll('.slider-image');
+        const sliderImage = document.createElement('img');
+        imageDiv.appendChild(sliderImage);
+        sliderImage.className = 'slider-image';
+        sliderImage.src = image;
 
-    imageElements.forEach((element, index) => {
-      element.src = imageArray[index];
+        imageDivs.push(imageDiv);
+      } else {
+        const imageDiv = document.createElement('div');
+        imageDiv.className = 'slider-image-container';
+        imageDiv.style.display = 'none';
+
+        const sliderImage = document.createElement('img');
+        imageDiv.appendChild(sliderImage);
+        sliderImage.className = 'slider-image';
+        sliderImage.src = image;
+
+        imageDivs.push(imageDiv);
+      }
     });
   };
 
   const slide = () => {
-    const sliderImageContainers = renderArea.querySelectorAll('.slider-image-container');
     let sliderValue = 0;
 
     const move = (direction) => {
       sliderValue += direction;
 
       if (sliderValue < 0) {
-        sliderValue = (sliderImageContainers.length - 1);
-      } else if (sliderValue > (sliderImageContainers.length - 1)) {
+        sliderValue = (imageDivs.length - 1);
+      } else if (sliderValue > (imageDivs.length - 1)) {
         sliderValue = 0;
       }
 
-      sliderImageContainers.forEach((element) => {
+      imageDivs.forEach((element) => {
         element.style.display = 'none';
       });
 
-      sliderImageContainers[sliderValue].style.display = 'block';
+      imageDivs[sliderValue].style.display = 'block';
     };
 
-    createSliderArea();
     arrowLeft.addEventListener('click', () => move(-1));
     arrowRight.addEventListener('click', () => move(1));
 
@@ -67,6 +75,8 @@ const imageSlider = (imageArray, renderArea) => {
   };
 
   addSliderImages();
+  createSliderArea();
+  slide();
 
   return {
     addSliderImages,
