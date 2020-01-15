@@ -10,8 +10,8 @@ import burger4 from './images/burger4.jpg';
 import burger5 from './images/burger5.jpg';
 
 const renderPage = () => {
-  // dropDown();
-  // mobileMenu();
+  dropDown();
+  mobileMenu();
   imageSlider([burger1, burger2, burger3, burger4, burger5], document.querySelector('.image-slider'));
 };
 

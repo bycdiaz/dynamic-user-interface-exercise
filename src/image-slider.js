@@ -14,10 +14,10 @@ const imageSlider = (imageArray, renderArea) => {
   arrowRight.classList.add('arrow');
 
   const createSliderArea = () => {
-    renderArea.appendChild(arrowLeft);
     imageDivs.forEach((image) => {
       renderArea.appendChild(image);
     });
+    renderArea.appendChild(arrowLeft);
     renderArea.appendChild(arrowRight);
   };
 
