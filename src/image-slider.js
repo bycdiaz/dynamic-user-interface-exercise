@@ -7,10 +7,12 @@ const imageSlider = (imageArray, renderArea) => {
 
   const arrowLeft = document.createElement('img');
   arrowLeft.src = back;
+  arrowLeft.id = 'arrow-left';
   arrowLeft.classList.add('arrow');
 
   const arrowRight = document.createElement('img');
   arrowRight.src = next;
+  arrowRight.id = 'arrow-right';
   arrowRight.classList.add('arrow');
 
   const createSliderArea = () => {
